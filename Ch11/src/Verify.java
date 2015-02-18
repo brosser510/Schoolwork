@@ -14,18 +14,20 @@ public class Verify
 	
 	password = JOptionPane.showInputDialog("What is your password?");
 	
-	if(password.length() >= 7)
-		for(int count = 0; count < password.length(); count++)
+	char[]passwordChars = password.toCharArray();
+	
+	if(passwordChars.length >= 7)
+		for(int count = 0; count < passwordChars.length; count++)
 		{
-			if(Character.isDigit(password.charAt(count)))
+			if(Character.isDigit(passwordChars[count]))
 			{
 				numDigits++;
 			}
-			else if(Character.isLetter(password.charAt(count)))
+			else if(Character.isLetter(passwordChars[count]))
 			{
 				numLetters++;
 			
-				if(Character.isUpperCase(password.charAt(count)))
+				if(Character.isUpperCase(passwordChars[count]))
 				{
 					numUpper++;
 				}
